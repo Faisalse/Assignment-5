@@ -25,22 +25,17 @@ public class PlayerController : MonoBehaviour
    // private var characters String = "0123456789abcdefghijklmnopqrstuvwxABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     void Start()
-    {
-        
-            
+    {           
         text1.text = "game2";
         rb = GetComponent<Rigidbody>();
         GeneratePrefab();
     }
     private void FixedUpdate()
     {
-        //Debug.Log("hjghggj");
         float horizental = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 vector3 = new Vector3(horizental, 0.0f, vertical);
-        rb.AddForce(vector3 * speed); 
-
-      
+        rb.AddForce(vector3 * speed);     
     }
     void OnTriggerEnter(Collider other)
     {
@@ -50,7 +45,6 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             setTextCount();
-
         }
         if (count >= 10)
         {
