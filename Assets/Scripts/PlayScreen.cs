@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SplashScreen : MonoBehaviour
+public class PlayScreen : MonoBehaviour
 {
     public static int ScreenNumber;
     // Start is called before the first frame update
