@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public TextMesh text9;
     public TextMesh text10;
     string[] listt;
-   // private var characters String = "0123456789abcdefghijklmnopqrstuvwxABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  
 
     void Start()
     {           
