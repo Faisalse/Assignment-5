@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject prefab;
     List<Vector3> prefabPostionList;
     public TextMesh text1;
+// Faisal
     public TextMesh text2;
     public TextMesh text3;
     public TextMesh text4;
