@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     public TextMesh text8;
     public TextMesh text9;
     public TextMesh text10;
+    public Text textcomp;
     string[] listt;
+    int count;
   
 
     void Start()
@@ -28,9 +30,10 @@ public class PlayerController : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
         GeneratePrefab();
-       
-        Debug.Log(listt[0]);
-        
+        count = 0;
+
+
+
 
 
     }
@@ -39,14 +42,82 @@ public class PlayerController : MonoBehaviour
         float horizental = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 vector3 = new Vector3(horizental, 0.0f, vertical);
-        rb.AddForce(vector3 * speed);     
+        rb.AddForce(vector3 * speed);
+        if (count ==10)
+        {
+            textcomp.text = "You have collect all random strings";
+        }
     }
     void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.CompareTag("Pick Up"))
         {
-            other.gameObject.SetActive(false);          
+            if (Vector3.Distance(other.gameObject.transform.position, text1.transform.position) == 0)
+            {
+                count += 1;
+                text1.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text2.transform.position) == 0)
+            {
+                count += 1;
+                text2.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text3.transform.position) == 0)
+            {
+                count += 1;
+                text3.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text4.transform.position) == 0)
+            {
+                count += 1;
+                text4.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text5.transform.position) == 0)
+            {
+                count += 1;
+                text5.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text6.transform.position) == 0)
+            {
+                count += 1;
+                text6.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text7.transform.position) == 0)
+            {
+                count += 1;
+                text7.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text8.transform.position) == 0)
+            {
+                count += 1;
+                text8.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text9.transform.position) == 0)
+            {
+                count += 1;
+                text9.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else if (Vector3.Distance(other.gameObject.transform.position, text10.transform.position) == 0)
+            {
+                count += 1;
+                text10.text = "";
+                other.gameObject.SetActive(false);
+            }
+            else
+            {
+                
+            }
+            
         }
        
 
@@ -59,15 +130,25 @@ public class PlayerController : MonoBehaviour
     void GeneratePrefab()
     {
         prefabPostionList = new List<Vector3>();
+        // 1
         prefabPostionList.Add(new Vector3(8, 0.5f, 8));
+        // 2
         prefabPostionList.Add(new Vector3(12, 0.5f, 2));
+        // 3
         prefabPostionList.Add(new Vector3(-12, 0.5f, -8));
+        // 4
         prefabPostionList.Add(new Vector3(-12, 0.5f, 3));
+        // 5
         prefabPostionList.Add(new Vector3(-12, 0.5f, -15));
+        // 6
         prefabPostionList.Add(new Vector3(1, 0.5f, -8));
+        // 7
         prefabPostionList.Add(new Vector3(1, 0.5f, 8));
+        // 8
         prefabPostionList.Add(new Vector3(12, 0.5f, -14));
+        // 9
         prefabPostionList.Add(new Vector3(-3, 0.5f, -6));
+        // 10
         prefabPostionList.Add(new Vector3(0, 0.5f, 2));
 
         for (int i = 0; i < prefabPostionList.Count; i++)
